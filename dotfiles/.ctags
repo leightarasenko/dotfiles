@@ -1,0 +1,9 @@
+--exclude=target
+--exclude=.git
+--exclude=.svn
+--exclude=.hg
+--exclude=*.js.map
+--exclude=*.min.*
+--exclude=*.swp
+--exclude=*.bak
+--exclude=*.tar.*
