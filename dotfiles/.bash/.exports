@@ -35,3 +35,14 @@ export GPG_TTY=$(tty);
 
 source ~/git-prompt.sh
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(__git_ps1 '(%s)')\[\033[00m\] $ "
+
+# https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
+if [ "$(uname)" == "Darwin" ]; then
+    # Do something under Mac OS X platform        
+
+    # Android SDK path
+    export ANDROID_HOME=/Users/leigh.tarasenko/Library/Android/sdk
+
+    # JavaJDK
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/
+fi
