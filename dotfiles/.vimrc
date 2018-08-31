@@ -157,7 +157,7 @@ let g:syntastic_check_on_wq = 0
 " CTRLP
 let g:ctrlp_show_hidden = 1
 if executable("ag")
-    let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag --path-to-ignore ~/.ignore %s -l --hidden --nocolor -g ""'
     let g:ctrlp_use_caching = 0
     " bind \ (backward slash) to grep shortcut
     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
