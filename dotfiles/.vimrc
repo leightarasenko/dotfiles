@@ -124,7 +124,7 @@ nmap :sp :rightbelow sp<cr>
 " Grep
 if executable('ag') 
     " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepprg=ag\ --nogroup\ --nocolor\ --
     set grepformat=%f:%l:%c%m
 endif
 
