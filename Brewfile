@@ -27,6 +27,7 @@ brew 'ssh-copy-id'
 brew 'tree'
 brew 'wget'
 brew 'the_silver_searcher'
+brew 'mysql'
 
 cask 'dropbox'
 cask 'firefox'
