@@ -89,3 +89,4 @@
 [submodule "dotfiles/.vim/bundle/youcompleteme"]
 	path = dotfiles/.vim/bundle/youcompleteme
 	url = https://github.com/Valloric/YouCompleteMe
+    ignore = untracked
