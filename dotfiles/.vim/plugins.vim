@@ -13,7 +13,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
