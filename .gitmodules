@@ -17,7 +17,7 @@
 [submodule "dotfiles/.vim/bundle/vim-colorschemes"]
 	path = dotfiles/.vim/bundle/vim-colorschemes
 	url = https://github.com/flazz/vim-colorschemes
-    ignore = untracked
+    ignore = dirty
 [submodule "dotfiles/.vim/bundle/vim-atom-dark"]
 	path = dotfiles/.vim/bundle/vim-atom-dark
 	url = https://github.com/gosukiwi/vim-atom-dark
