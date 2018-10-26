@@ -23,6 +23,8 @@ mkdir -p ~/.vim/undo
 mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/swap
 
+mkdir -p ~/bin
+
 git submodule init
 git submodule update
 
