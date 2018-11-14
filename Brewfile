@@ -5,7 +5,6 @@ tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
 tap 'homebrew/services'
-tap 'homebrew/versions'
 
 brew 'ack'
 brew 'bash-completion'
