@@ -31,4 +31,6 @@ sudo apt-get update
 sudo apt-get install oracle-java8-installer
 sudo apt install oracle-java8-set-default
 
+alias explorer
+
 ./install.sh
