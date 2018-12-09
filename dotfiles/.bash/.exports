@@ -36,6 +36,9 @@ export GPG_TTY=$(tty);
 source ~/git-prompt.sh
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(__git_ps1 '(%s)')\[\033[00m\] $ "
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
 # https://stackoverflow.com/questions/3466166/how-to-check-if-running-in-cygwin-mac-or-linux
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform        
@@ -53,4 +56,6 @@ fi
 if [ "$(uname)" == "Linux" ]; then
     # JavaJDK
     export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+    export DOCKER_HOST='tcp://0.0.0.0:2375'
 fi

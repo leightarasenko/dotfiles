@@ -45,3 +45,8 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Setup alias for ag that loads ag ignore file
 alias ag='ag --path-to-ignore ~/.agignore'
+
+# Windows ubuntu bash
+if [ "$(uname)" == "Linux" ]; then
+    alias explorer='/mnt/c/Windows/explorer.exe'
+fi
