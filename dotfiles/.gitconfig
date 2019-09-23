@@ -35,6 +35,6 @@
 	br = branch
 [diff]
 	altorithm = histogram
-	tool = meld
+	tool = opendiff
 [merge]
-	tool = meld
+	tool = opendiff
