@@ -112,7 +112,6 @@ nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
 set wildignore+=*/node_modules/**
 set wildignore+=*/\.git/**
-set wildignore+=*/puppet/**
 
 " Open splits
 nmap vs :vsplit<cr>
@@ -121,20 +120,23 @@ nmap sp :split<cr>
 " Create split below
 nmap :sp :rightbelow sp<cr>
 
-" Grep
+" Grep/AG
 if executable('ag') 
     " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\ --
+    set grepprg=ag\ --nogroup\ --nocolor\
     set grepformat=%f:%l:%c%m
+    " bind \ (backward slash) to grep shortcut
+    nnoremap \ :Ag<SPACE>
+    nnoremap K :Ag <C-R><C-W><CR>
 endif
-
-" bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 nmap <silent> <RIGHT> :cnext<CR>
 nmap <silent> <LEFT> :cprev<CR>
 
 "-------------Plugins-------------
+
+" FZF
+nnoremap <C-p> :Files<Cr>
 
 " NERDTREE
 let NERDTreeShowHidden=1
@@ -145,37 +147,7 @@ nnoremap <silent> <leader>F :NERDTreeFind<CR>
 
 " AIRLINE
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-" SYNTASTIC
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" CTRLP
-let g:ctrlp_show_hidden = 1
-if executable("ag")
-    let g:ctrlp_user_command = 'ag --path-to-agignore ~/ %s -l --hidden --nocolor -g ""'
-    let g:ctrlp_use_caching = 0
-    " bind \ (backward slash) to grep shortcut
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-endif
-
-map <C-t> :CtrlPBufTag<cr>
-
-" VIM-MARKDOWN
-let g:vim_markdown_folding_disabled = 1
-
-" AG
-
-
-"-------------Syntax--------------
-au BufRead,BufNewFile *.ts   setfiletype typescript
-
-let g:jsx_ext_required = 0
 
 if has('persistent_undo')
     set undofile

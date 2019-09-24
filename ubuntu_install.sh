@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -q -y git zsh silversearcher-ag ack-grep ctags python-setuptools build-essential cmake
+sudo apt-get install -q -y git fzf zsh silversearcher-ag ack-grep ctags python-setuptools build-essential cmake
 
 # ZSH install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -14,16 +14,6 @@ if [ ! -d "$NVM_DIR" ]; then
     ./nvm.sh
     popd
  . "$NVM_DIR/nvm.sh"
-fi
-
-# Geeknote install
-if [ ! -d ~/geeknote ]; then
-    git clone git://github.com/VitaliyRodnenko/geeknote.git ~/geeknote
-    pushd ~/geeknote
-    sudo python setup.py install
-    geeknote login
-    geeknote settings --editor vim
-    popd
 fi
 
 sudo add-apt-repository ppa:webupd8team/java

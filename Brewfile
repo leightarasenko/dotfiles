@@ -28,6 +28,7 @@ brew 'wget'
 brew 'the_silver_searcher'
 brew 'mysql'
 brew 'qt@5.5'
+brew 'fzf'
 
 cask 'dropbox'
 cask 'firefox'
