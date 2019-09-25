@@ -90,7 +90,14 @@
 	path = dotfiles/.vim/bundle/youcompleteme
 	url = https://github.com/Valloric/YouCompleteMe
     ignore = untracked
+[submodule "dotfiles/.vim/bundle/fzf"]
+	path = dotfiles/.vim/bundle/fzf
+	url = https://github.com/junegunn/fzf
+    ignore = untracked
 [submodule "dotfiles/.vim/bundle/fzf.vim"]
 	path = dotfiles/.vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
     ignore = untracked
+[submodule "dotfiles/.tmux/plugins/tpm"]
+	path = dotfiles/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

@@ -2,3 +2,7 @@ dotfiles/.vim/.netrwhist
 dotfiles/.vim/undo/
 dotfiles/.vim/swap/
 dotfiles/.vim/backup/
+dotfiles/.tmux/resurrect/
+
+dotfiles/.tmux/plugins/*
+!dotfiles/.tmux/plugins/tmux
