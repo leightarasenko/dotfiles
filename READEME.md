@@ -1,26 +1,30 @@
-## Installation
+# Windows Machine Setup
+
+* Install WSL2
+* Install Windows Terminal
+* Install PowerToys
+* Install Ditto Clipboard Manager
+* Install Vcxsrv
+* Install Docker Desktop
+
+# Setup development system
+
+First clone the github repo
 
 ```
-git clone git://github.com/ricobl/dotfiles.git
-./install.sh
-```
-### Operating system installation
-
-#### Ubuntu
-
-```
-./ubuntu_install.h
+git clone git://github.com/leigh.tarasenko/dotfiles.git
 ```
 
-#### MacOSX
+# Operating system installation
 
-```
-./osx_install.h
-```
+## Ubuntu
 
-To install YouCompleteMe you will need to run
+Run `./ubuntu_install.sh`
 
-```
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --tern-completer
-```
+## MacOSX
+
+Run `./osx_install.sh`
+
+## Just setting up dotfiles
+
+You can setup just the dotfiles by running `./install.sh`

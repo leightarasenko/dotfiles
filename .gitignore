@@ -1,8 +1,23 @@
-dotfiles/.vim/.netrwhist
-dotfiles/.vim/undo/
-dotfiles/.vim/swap/
-dotfiles/.vim/backup/
-dotfiles/.tmux/resurrect/
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
 
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*~
+
+# Auto-generated tag files
+tags
+
+# Persistent undo
+[._]*.un~/
+
+dotfiles/.tmux/resurrect/
 dotfiles/.tmux/plugins/*
 !dotfiles/.tmux/plugins/tmux

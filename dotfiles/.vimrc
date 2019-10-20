@@ -1,10 +1,33 @@
+" PLUGINS
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'bling/vim-airline'
+
+" Automatically show Vim's complete menu while typing.
+Plug 'vim-scripts/AutoComplPop'
+
+" Integrate fzf with Vim.
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
+
+" Colors
+Plug 'gosukiwi/vim-atom-dark'
+Plug 'flazz/vim-colorschemes'
+
+call plug#end()
+
 "BASIC SETUP
 
 " enter the current millenium
 set nocompatible
 set t_Co=256
-
-so ~/.vim/plugins.vim
 
 " enable syntax and plugins (for netrw)
 syntax enable
@@ -27,13 +50,12 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide=',\(^\|\s\s)zs\.\S\+'
 
-
 "-------------Search------------
 set hlsearch
 set incsearch
 
 "-------------Visuals------------
-colorscheme monokai-chris
+colorscheme atom-dark-256
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
@@ -60,6 +82,7 @@ set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
 set mouse=a
 set nofoldenable
+set clipboard^=unnamed,unnamedplus
 
 set number relativenumber
 
@@ -71,7 +94,6 @@ augroup END
 
 "Show (partial) command in the status line
 set showcmd
-set clipboard=unnamed
 
 " Quickly go forward or backward to buffer
 nmap :bp :BufSurfBack<cr>
@@ -120,14 +142,14 @@ nmap sp :split<cr>
 " Create split below
 nmap :sp :rightbelow sp<cr>
 
-" Grep/AG
-if executable('ag') 
+" Grep/RG
+if executable('rg') 
     " Note we extract the column as well as the file and line number
-    set grepprg=ag\ --nogroup\ --nocolor\
+    set grepprg=rg\ --nogroup\ --nocolor\
     set grepformat=%f:%l:%c%m
     " bind \ (backward slash) to grep shortcut
-    nnoremap \ :Ag<SPACE>
-    nnoremap K :Ag <C-R><C-W><CR>
+    nnoremap \ :Rg<SPACE>
+    nnoremap K :Rg <C-R><C-W><CR>
 endif
 
 nmap <silent> <RIGHT> :cnext<CR>
@@ -136,7 +158,26 @@ nmap <silent> <LEFT> :cprev<CR>
 "-------------Plugins-------------
 
 " FZF
-nnoremap <C-p> :Files<Cr>
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}
+
+nnoremap <silent> <C-p> :FZF -m<Cr>
+
+" Map a few common things to do with FZF.
+nnoremap <silent> <Leader><Enter> :Buffers<CR>
+nnoremap <silent> <Leader>l :Lines<CR>
+
+" Allow passing optional flags into the Rg command.
+"   Example: :Rg myterm -g '*.md'
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \ "rg --column --line-number --no-heading --color=always --smart-case " .
+  \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
 
 " NERDTREE
 let NERDTreeShowHidden=1
